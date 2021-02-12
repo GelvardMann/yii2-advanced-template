@@ -1,0 +1,13 @@
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# ignore generated files
+/index.php
+/index-test.php
+/robots.txt
+/admin/index.php
+/admin/index-test.php
+/admin/robots.txt
