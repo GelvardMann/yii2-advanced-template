@@ -137,3 +137,11 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}

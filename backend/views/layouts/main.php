@@ -5,8 +5,8 @@
 
 use backend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
 use yii\web\View;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
@@ -33,7 +33,7 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-light bg-white navbar-expand-md fixed-top shadow-sm',
         ],
     ]);
     $menuItems = [
@@ -51,16 +51,19 @@ AppAsset::register($this);
             . Html::endForm()
             . '</li>';
     }
+    echo '<div class="menu-container d-flex justify-content-end">';
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav align-items-end'],
+        'activateParents' => true,
         'items' => $menuItems,
     ]);
+    echo '</div>';
     NavBar::end();
     ?>
 
     <div class="container">
         <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'links' => $this->params['breadcrumbs'] ?? [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
